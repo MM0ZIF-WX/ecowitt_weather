@@ -1,5 +1,8 @@
 Ecowitt Weather Dashboard
 
+Donate link: https://mm0zif.radio/current/fundraising-campaign/
+
+
 A WordPress plugin that displays a 7-day weather dashboard using data from Ecowitt weather stations. Visualizes temperature, humidity, solar radiation, UV index, rain rate, wind speed, pressure, soil moisture, and wind direction through interactive charts.
 
 Features
@@ -51,6 +54,9 @@ Please report bugs or suggest features via GitHub Issues.
 License
 
 This plugin is licensed under the GPL-3.0 License.
+
+Donate link: https://mm0zif.radio/current/fundraising-campaign/
+
 
 Credits
 Developed by Marcus Hazel-McGown, MM0ZIF. https://mm0zif.radio/ Uses Chart.js and Highcharts for data visualization.
