@@ -1,0 +1,68 @@
+.ecowitt-dashboard, .ecowitt-yearly-dashboard {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+.sensor-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.sensor-table th, .sensor-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.sensor-table th {
+    background-color: #f4f4f4;
+}
+
+.chart-btn {
+    background-color: #0073aa;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.chart-btn:hover {
+    background-color: #005d87;
+}
+
+.chart-container {
+    margin-bottom: 20px;
+}
+
+.tide-section {
+    margin-top: 20px;
+}
+
+.tide-section table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tide-section th, .tide-section td {
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+.tide-section th {
+    background-color: #f4f4f4;
+}
+
+.timestamp {
+    text-align: center;
+    color: # 0.9em;
+    margin-top: 20px;
+}
