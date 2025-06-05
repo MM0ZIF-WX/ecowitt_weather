@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Ecowitt Weather Dashboard
-Description: Displays Ecowitt weather data, a wind rose, and Stormglass tide data via shortcode and provides an admin settings page.
+Description: Displays Ecowitt weather data and a wind rose via shortcode and provides an admin settings page.
 Version: 4.2.1
 Author: Marcus Hazel-McGown (MM0ZIF)
 */
@@ -89,21 +89,15 @@ class Ecowitt_Weather_Dashboard {
                 return $clean_mac;
             }
         ]);
-        register_setting('ecowitt_weather_settings_group', 'ecowitt_lat', [
-            'sanitize_callback' => 'sanitize_text_field'
-        ]);
-        register_setting('ecowitt_weather_settings_group', 'ecowitt_lon', [
-            'sanitize_callback' => 'sanitize_text_field'
-        ]);
-        register_setting('ecowitt_weather_settings_group', 'stormglass_api_key', [
-            'sanitize_callback' => 'sanitize_text_field'
-        ]);
+        // register_setting for ecowitt_lat removed
+        // register_setting for ecowitt_lon removed
+        // register_setting for stormglass_api_key removed
     }
 
     public function render_settings_page() {
         ?>
         <div class="wrap">
-            <h1>Ecowitt Weather & Tide Settings</h1>
+            <h1>Ecowitt Weather Settings</h1>
             <?php settings_errors(); ?>
             <form method="post" action="options.php">
                 <?php settings_fields('ecowitt_weather_settings_group'); ?>
@@ -127,24 +121,9 @@ class Ecowitt_Weather_Dashboard {
                             <p class="description">Enter with or without colons (e.g., <code>A0B1C2D3E4F5</code> or <code>A0:B1:C2:D3:E4:F5</code>)</p>
                         </td>
                     </tr>
-                    <tr>
-                        <th><label for="ecowitt_lat">Latitude</label></th>
-                        <td>
-                            <input type="text" id="ecowitt_lat" name="ecowitt_lat" value="<?php echo esc_attr(get_option('ecowitt_lat')); ?>" class="regular-text" required />
-                        </td>
-                    </tr>
-                    <tr>
-                        <th><label for="ecowitt_lon">Longitude</label></th>
-                        <td>
-                            <input type="text" id="ecowitt_lon" name="ecowitt_lon" value="<?php echo esc_attr(get_option('ecowitt_lon')); ?>" class="regular-text" required />
-                        </td>
-                    </tr>
-                    <tr>
-                        <th><label for="stormglass_api_key">Stormglass API Key</label></th>
-                        <td>
-                            <input type="text" id="stormglass_api_key" name="stormglass_api_key" value="<?php echo esc_attr(get_option('stormglass_api_key')); ?>" class="regular-text" />
-                        </td>
-                    </tr>
+                    <?php // Latitude row removed ?>
+                    <?php // Longitude row removed ?>
+                    <?php // Stormglass API Key row removed ?>
                 </table>
                 <?php submit_button('Save Settings'); ?>
             </form>
@@ -156,9 +135,9 @@ class Ecowitt_Weather_Dashboard {
         $app_key = get_option('ecowitt_app_key');
         $api_key = get_option('ecowitt_api_key');
         $mac = get_option('ecowitt_mac');
-        $lat = get_option('ecowitt_lat');
-        $lon = get_option('ecowitt_lon');
-        $stormglass_api_key = get_option('stormglass_api_key');
+        // $lat = get_option('ecowitt_lat'); // Removed
+        // $lon = get_option('ecowitt_lon'); // Removed
+        // $stormglass_api_key = get_option('stormglass_api_key'); // Commented out
 
         $output = '<div class="ecowitt-dashboard">';
 
@@ -357,6 +336,7 @@ class Ecowitt_Weather_Dashboard {
         return $data;
     }
 
+    /*
     private function format_tide_table($data) {
         $now = new DateTime('now', new DateTimeZone('Europe/London'));
         $two_days_later = (clone $now)->modify('+2 days');

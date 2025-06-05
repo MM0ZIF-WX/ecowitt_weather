@@ -1,0 +1,22 @@
+.tide-section {
+    background-color: #f8f8f8;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.ecowitt-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.ecowitt-table th,
+.ecowitt-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.ecowitt-table th {
+    background-color: #f2f2f2;
+}
